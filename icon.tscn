@@ -1,7 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx0wsqlhox0lg"]
+[gd_scene load_steps=3 format=3 uid="uid://bx0wsqlhox0lg"]
 
-[ext_resource type="Texture2D" uid="uid://b3cmx1rwf7dut" path="res://icon.svg" id="1_6gwep"]
+[ext_resource type="Script" path="res://World.gd" id="1_8ewtj"]
+[ext_resource type="PackedScene" uid="uid://d82vbiysmftv" path="res://player.tscn" id="2_hp4dx"]
 
-[node name="Icon" type="Sprite2D"]
-position = Vector2(706, 295)
-texture = ExtResource("1_6gwep")
+[node name="world" type="Node2D"]
+script = ExtResource("1_8ewtj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(20, 0, 320, 0, 320, 180, 0, 180, 0, 0, 10, 0, 10, 150, 30, 150, 30, 170, 70, 170, 70, 160, 90, 160, 90, 150, 110, 150, 110, 140, 130, 140, 130, 120, 140, 120, 140, 90, 150, 90, 150, 120, 170, 120, 170, 140, 180, 140, 180, 130, 190, 130, 190, 140, 210, 140, 210, 160, 240, 160, 300, 170, 310, 170, 310, 10, 70, 10, 70, 110, 60, 110, 60, 10, 20, 10)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_hp4dx")]
+position = Vector2(30, 60)
