@@ -79,26 +79,26 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1m2t"]
-size = Vector2(8, 14)
+size = Vector2(8, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7u06"]
 size = Vector2(6, 12)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(0, -10)
 collision_layer = 2
-collision_mask = 5
 floor_constant_speed = true
 floor_snap_length = 3.0
+safe_margin = 0.2
 script = ExtResource("1_hu3e0")
 movement_data = ExtResource("2_cgy5o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_3cb8w")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_a1m2t")
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
@@ -106,11 +106,12 @@ wait_time = 0.123
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -42)
 process_callback = 0
 position_smoothing_enabled = true
 
 [node name="HazardDetector" type="Area2D" parent="."]
+position = Vector2(0, -10)
 collision_layer = 0
 collision_mask = 4
 
@@ -119,3 +120,4 @@ position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_t7u06")
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
+[connection signal="body_entered" from="HazardDetector" to="." method="_on_hazard_detector_body_entered"]

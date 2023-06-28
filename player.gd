@@ -9,16 +9,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_position = global_position
 
-
 func _physics_process(delta):
 	apply_gravity(delta)
 	
 	handle_jump()
 	handle_walljump()
 	
-	
-	
-	var input_axis = Input.get_axis("ui_left", "ui_right")
+	var input_axis = Input.get_axis("move_left", "move_right")
 	
 	handle_acceleration(input_axis, delta)
 	handle_friction(input_axis, delta)
@@ -37,19 +34,19 @@ func handle_jump():
 		air_jump = true
 		
 	if (is_on_floor() or not coyote_jump_timer.is_stopped()) and velocity.y >= 0:
-		if Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("jump"):
 			velocity.y = movement_data.jump_velocity
 	else:
-		if Input.is_action_just_released("ui_up") and velocity.y < movement_data.jump_velocity/3:
+		if Input.is_action_just_released("jump") and velocity.y < movement_data.jump_velocity/3:
 			velocity.y = movement_data.jump_velocity/3
-		if Input.is_action_just_pressed("ui_up") and air_jump == true:
+		if Input.is_action_just_pressed("jump") and air_jump == true:
 			velocity.y = movement_data.jump_velocity * 0.8
 			air_jump = false
 
 func handle_walljump():
 	if is_on_wall_only():
 		var wall_normal = get_wall_normal()
-		if Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("jump") and (Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")):
 			velocity.x = movement_data.speed * 2 * wall_normal.x
 			velocity.y = movement_data.jump_velocity
 			air_jump = true
@@ -75,7 +72,7 @@ func handle_air_resistence(input_axis, delta):
 func update_animations(input_axis):
 	if input_axis != 0:
 		animated_sprite_2d.play("run")
-		animated_sprite_2d.scale.x = input_axis 
+		animated_sprite_2d.scale.x = sign(input_axis) 
 	else:
 		animated_sprite_2d.play("idle")
 	
@@ -85,4 +82,10 @@ func update_animations(input_axis):
 
 
 func _on_hazard_detector_area_entered(area):
+	print("a")
+	print(starting_position)
 	position = starting_position
+
+
+func _on_hazard_detector_body_entered(body):
+	_on_hazard_detector_area_entered(null)
