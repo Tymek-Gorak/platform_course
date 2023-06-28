@@ -82,8 +82,6 @@ func update_animations(input_axis):
 
 
 func _on_hazard_detector_area_entered(area):
-	print("a")
-	print(starting_position)
 	position = starting_position
 
 
