@@ -1,5 +1,11 @@
 res://icon.tscn
 res://player.tscn
 res://player.gd
-res://PlayerMovementData.gd
-res://DefaultMovementData.tres
+res://spikes.tscn
+res://hazard_area.tscn
+res://heart.tscn
+res://heart.gd
+res://level_completed.tscn
+res://Events.gd
+res://World.gd
+res://level_tile_map.tscn
