@@ -1,10 +1,36 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx0wsqlhox0lg"]
+[gd_scene load_steps=8 format=3 uid="uid://bx0wsqlhox0lg"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_8ewtj"]
 [ext_resource type="PackedScene" uid="uid://d82vbiysmftv" path="res://player.tscn" id="2_hp4dx"]
-[ext_resource type="PackedScene" uid="uid://ip4dddbs1sqt" path="res://game_complete.tscn" id="4_xgkn3"]
 [ext_resource type="PackedScene" uid="uid://bxgstfojsafcr" path="res://level_completed.tscn" id="5_l8f6b"]
 [ext_resource type="PackedScene" uid="uid://du1xvv1q30q5p" path="res://level_tile_map.tscn" id="6_buntt"]
+
+[sub_resource type="Animation" id="Animation_1su1b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect/CenterContainer/StartIn:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Start in: 3"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.278431)]
+}
 
 [sub_resource type="Animation" id="Animation_20waj"]
 resource_name = "countdown"
@@ -32,33 +58,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 0.757857),
 "update": 0,
 "values": [Color(0, 0, 0, 0.278431), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_1su1b"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ColorRect/CenterContainer/StartIn:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Start in: 3"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0.278431)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4j1of"]
@@ -121,10 +120,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "0.000"
 vertical_alignment = 1
-
-[node name="GameComplete" parent="CanvasLayer" instance=ExtResource("4_xgkn3")]
-unique_name_in_owner = true
-visible = false
 
 [node name="LevelTileMap" parent="." instance=ExtResource("6_buntt")]
 

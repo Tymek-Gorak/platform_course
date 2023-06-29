@@ -15,9 +15,6 @@ position = Vector2(24, 144)
 [node name="LevelCompleted" parent="CanvasLayer" index="0"]
 mouse_filter = 1
 
-[node name="ColorRect" parent="CanvasLayer" index="1"]
-mouse_filter = 2
-
 [node name="Spikes" parent="." index="3" instance=ExtResource("2_jlqiu")]
 position = Vector2(176, 128)
 

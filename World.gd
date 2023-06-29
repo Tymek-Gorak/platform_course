@@ -12,7 +12,6 @@ var start_level_msc
 
 
 
-
 func _ready():
 	RenderingServer.set_default_clear_color(Color.BLACK)
 	Events.level_completed.connect(show_level_completed)
@@ -27,8 +26,9 @@ func _process(delta):
 
 func show_level_completed():
 	if next_level == null: 
-		game_won()
-		return
+		level_completed.next_level_button.text = "Victory Screen"
+		next_level = load("res://game_complete.tscn")
+		
 	level_completed.show() 
 	level_completed.next_level_button.grab_focus()
 	get_tree().paused = true
@@ -44,11 +44,6 @@ func retry():
 	get_tree().reload_current_scene()
 	get_tree().paused = false
 	
-
-func game_won():
-	game_complete.show()
-	game_complete.menu_button.grab_focus()
-	get_tree().paused = true
 
 func _on_start_countdown_animation_finished(anim_name):
 	start_level_msc = Time.get_ticks_msec()
