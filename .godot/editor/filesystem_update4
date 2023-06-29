@@ -9,3 +9,7 @@ res://game_complete.gd
 res://level_completed.gd
 res://World.gd
 res://start_menu.gd
+res://save_game.gd
+res://game_saver.tscn
+res://heart.tscn
+res://Events.gd

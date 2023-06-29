@@ -1,6 +1,8 @@
+Node
+Label
+GridContainer
 CenterContainer
 Button
-Label
 VBoxContainer
 HBoxContainer
 MarginContainer
@@ -8,7 +10,6 @@ ColorRect
 AnimationPlayer
 Timer
 CanvasLayer
-Node
 TileMap
 CollisionShape2D
 Sprite2D
