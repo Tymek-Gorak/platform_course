@@ -7,22 +7,22 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
+@onready var wall_jump_buffer_timer = $WallJumpBufferTimer
 @onready var starting_position = global_position
+@onready var wall_jump_coyotee_timer = $WallJumpCoyoteeTimer
 
 func _physics_process(delta):
-	apply_gravity(delta)
-	
-	handle_jump()
-	handle_walljump()
-	
 	var input_axis = Input.get_axis("move_left", "move_right")
 	
+	apply_gravity(delta)
+	handle_jump()
+	handle_walljump(input_axis)
 	handle_acceleration(input_axis, delta)
 	handle_friction(input_axis, delta)
 	handle_air_resistence(input_axis, delta)
-	update_animations(input_axis)
 
 	move_and_slide()
+	update_animations(input_axis)
 
 func apply_gravity(delta):
 	if not is_on_floor():
@@ -34,7 +34,7 @@ func handle_jump():
 		air_jump = true
 		
 	if (is_on_floor() or not coyote_jump_timer.is_stopped()) and velocity.y >= 0:
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_pressed("jump"):
 			velocity.y = movement_data.jump_velocity
 	else:
 		if Input.is_action_just_released("jump") and velocity.y < movement_data.jump_velocity/3:
@@ -43,14 +43,28 @@ func handle_jump():
 			velocity.y = movement_data.jump_velocity * 0.8
 			air_jump = false
 
-func handle_walljump():
+func handle_walljump(input_axis):
+	if Input.is_action_just_pressed("jump") and not is_on_floor():
+		wall_jump_buffer_timer.start()
+	
+	
+	
+	var wall_normal 
 	if is_on_wall_only():
-		var wall_normal = get_wall_normal()
-		if Input.is_action_just_pressed("jump") and (Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")):
+		wall_jump_coyotee_timer.start()
+		wall_normal = get_wall_normal()
+		if (Input.is_action_just_pressed("jump") or not wall_jump_buffer_timer.is_stopped()) and input_axis != 0:
 			velocity.x = movement_data.speed * 2 * wall_normal.x
 			velocity.y = movement_data.jump_velocity
 			air_jump = true
-
+	
+	if not wall_jump_coyotee_timer.is_stopped():
+		if wall_normal == null: 
+			if Input.is_action_just_pressed("jump") and input_axis != 0:
+				velocity.x = movement_data.speed * 2 * sign(input_axis)
+				velocity.y = movement_data.jump_velocity
+				air_jump = true
+	
 func handle_acceleration(input_axis, delta):
 	if is_on_floor():
 		if input_axis:

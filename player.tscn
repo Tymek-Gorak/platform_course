@@ -101,6 +101,14 @@ animation = &"idle"
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_a1m2t")
 
+[node name="WallJumpBufferTimer" type="Timer" parent="."]
+wait_time = 0.07
+one_shot = true
+
+[node name="WallJumpCoyoteeTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.123
 one_shot = true

@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://ip4dddbs1sqt"]
+
+[ext_resource type="Script" path="res://game_complete.gd" id="1_k1yak"]
+
+[node name="GameComplete" type="CenterContainer"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k1yak")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "You Win!"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 16)
+layout_mode = 2
+text = "Return to main menu"
