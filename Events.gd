@@ -10,11 +10,13 @@ func _ready():
 func write_or_load_save():
 	if SaveGame.load_save() != null:
 		game_saver = SaveGame.load_save()
+		#game_saver.highscores = [0.000, 0.000, 5.784, 0.000, 0.000, 0.000, ]
+		#game_saver.write_save()
+		
 	else:
 		game_saver = SaveGame.new()
-		
-		game_saver.highscores = [0.010, 0.100, 0.123, 1.000, 0.000, 23.000, ]
+		game_saver.highscores = [0.000, 0.000, 0.000, 0.000, 0.000, 0.000, ]
 		game_saver.write_save()
 		
-func save_score(level, score):
-	pass
+func save_scores():
+	game_saver.write_save()

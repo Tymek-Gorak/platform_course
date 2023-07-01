@@ -1,7 +1,224 @@
-[gd_scene load_steps=3 format=3 uid="uid://ip4dddbs1sqt"]
+[gd_scene load_steps=21 format=3 uid="uid://ip4dddbs1sqt"]
 
 [ext_resource type="Script" path="res://game_complete.gd" id="1_k1yak"]
 [ext_resource type="PackedScene" uid="uid://c46avy6v1tnbg" path="res://start_menu.tscn" id="2_gknqo"]
+
+[sub_resource type="Animation" id="Animation_h3xj0"]
+resource_name = "change_color"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%GridContainer/Label2:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i04m2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%GridContainer/Label2:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5uhis"]
+_data = {
+"RESET": SubResource("Animation_i04m2"),
+"change_color": SubResource("Animation_h3xj0")
+}
+
+[sub_resource type="Animation" id="Animation_65ajx"]
+resource_name = "change_color"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v2lap"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6gto7"]
+_data = {
+"RESET": SubResource("Animation_v2lap"),
+"change_color": SubResource("Animation_65ajx")
+}
+
+[sub_resource type="Animation" id="Animation_p3h7j"]
+resource_name = "change_color"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2v7kc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ta4hu"]
+_data = {
+"RESET": SubResource("Animation_2v7kc"),
+"change_color": SubResource("Animation_p3h7j")
+}
+
+[sub_resource type="Animation" id="Animation_cpsnr"]
+resource_name = "change_color"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jkaro"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dw0ls"]
+_data = {
+"RESET": SubResource("Animation_jkaro"),
+"change_color": SubResource("Animation_cpsnr")
+}
+
+[sub_resource type="Animation" id="Animation_1cp70"]
+resource_name = "change_color"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d7vbx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u7ukj"]
+_data = {
+"RESET": SubResource("Animation_d7vbx"),
+"change_color": SubResource("Animation_1cp70")
+}
+
+[sub_resource type="Animation" id="Animation_w5gmf"]
+resource_name = "change_color"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r1h7v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gunxs"]
+_data = {
+"RESET": SubResource("Animation_r1h7v"),
+"change_color": SubResource("Animation_w5gmf")
+}
 
 [node name="GameComplete" type="CenterContainer"]
 process_mode = 3
@@ -16,79 +233,175 @@ menu_scene = ExtResource("2_gknqo")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-text = "You Win!"
+theme_override_constants/separation = 17
 
-[node name="MenuButton" type="Button" parent="VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(64, 16)
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Return to main menu"
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+You Win!"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 columns = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "level 1:"
 
-[node name="Label2" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 11
 text = "0.001"
 
-[node name="Label3" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Label2"]
+root_node = NodePath("../../../../VBoxContainer2/DevTimesContainer")
+libraries = {
+"": SubResource("AnimationLibrary_5uhis")
+}
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "level 2:"
 
-[node name="Label4" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 11
 text = "0.001"
 
-[node name="Label5" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Label4"]
+libraries = {
+"": SubResource("AnimationLibrary_6gto7")
+}
+
+[node name="Label5" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "level 3:"
 
-[node name="Label6" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Label6" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 11
 text = "0.001"
 
-[node name="Label7" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Label6"]
+libraries = {
+"": SubResource("AnimationLibrary_ta4hu")
+}
+
+[node name="Label7" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "level 4:"
 
-[node name="Label8" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Label8" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 11
 text = "0.001"
 
-[node name="Label9" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Label8"]
+libraries = {
+"": SubResource("AnimationLibrary_dw0ls")
+}
+
+[node name="Label9" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "level 5:"
 
-[node name="Label10" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Label10" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 11
 text = "0.001"
 
-[node name="Label11" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Label10"]
+libraries = {
+"": SubResource("AnimationLibrary_u7ukj")
+}
+
+[node name="Label11" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "level 6:"
 
-[node name="Label12" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Label12" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 11
 text = "0.001"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Label12"]
+libraries = {
+"": SubResource("AnimationLibrary_gunxs")
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "
+DEV TIMES:"
+
+[node name="DevTimesContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/DevTimesContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "0.000"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/DevTimesContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "0.000"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/DevTimesContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "0.000"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/DevTimesContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "0.000"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/DevTimesContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "0.000"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/DevTimesContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "0.000"
+horizontal_alignment = 1
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Return to main menu"
 
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

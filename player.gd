@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var wall_jump_buffer_timer = $WallJumpBufferTimer
 @onready var starting_position = global_position
 @onready var wall_jump_coyotee_timer = $WallJumpCoyoteeTimer
+@onready var restart_label = %RestartLabel
 
 func _physics_process(delta):
 	var input_axis = Input.get_axis("move_left", "move_right")
@@ -23,6 +24,14 @@ func _physics_process(delta):
 
 	move_and_slide()
 	update_animations(input_axis)
+	
+	if position.y > 300:
+		restart_label.show()
+	else:
+		restart_label.hide()
+	
+	if Input.is_action_just_pressed("tp_back"):
+		_on_hazard_detector_area_entered(null)
 
 func apply_gravity(delta):
 	if not is_on_floor():

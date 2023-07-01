@@ -117,6 +117,28 @@ one_shot = true
 position = Vector2(0, -42)
 process_callback = 0
 position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="RestartLabel" type="Label" parent="Camera2D/CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -30.0
+offset_right = 143.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press T to go back to start
+
+Press R to restart"
+horizontal_alignment = 1
 
 [node name="HazardDetector" type="Area2D" parent="."]
 position = Vector2(0, -10)
